@@ -1,2 +1,7 @@
-build
-coverage
+tsconfig
+
+/build
+
+/coverage
+
+/node_modules
