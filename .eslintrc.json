@@ -15,7 +15,15 @@
     "commonjs": true,
     "es6": true
   },
-  "extends": ["plugin:react/recommended", "eslint:recommended"],
+  "extends": [
+    // "react-app",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "prettier",
+    // "plugin:prettier/recommended",
+    "plugin:import/typescript",
+    "plugin:react-hooks/recommended"
+  ],
   "parser": "babel-eslint",
   "plugins": ["react"],
   "settings": {
@@ -31,13 +39,13 @@
   "rules": {
     "no-console": "off",
     // 禁止未使用的变量
-    "no-unused-vars": [
-      2,
-      {
-        "vars": "all",
-        "args": "none"
-      }
-    ],
+    // "no-unused-vars": [
+    //   2,
+    //   {
+    //     "vars": "all",
+    //     "args": "none"
+    //   }
+    // ],
     // 强制使用getter,setter成对出现
     "accessor-pairs": 2,
     // 要求箭头函数的箭头之前或之后有空格
