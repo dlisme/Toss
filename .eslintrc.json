@@ -116,7 +116,7 @@
       }
     ],
     // 强制在 JSX 属性中一致地使用双引号或单引号
-    "jsx-quotes": [2, "prefer-single"],
+    "jsx-quotes": [2, "prefer-double"],
     // 强制在对象字面量的属性中键和值之间使用一致的间距
     "key-spacing": [
       2,
@@ -289,7 +289,7 @@
     // 要求或禁止块内填充
     "padded-blocks": [2, "never"],
     // 要求或禁止使用分号而不是 ASI（这个才是控制行尾部分号的，）
-    "semi": [2, "never"],
+    "semi": [0, "always"],
     // 强制分号之前和之后使用一致的空格
     "semi-spacing": [
       2,
@@ -315,21 +315,21 @@
       }
     ],
     // 强制在注释中 // 或 /* 使用一致的空格
-    "spaced-comment": [
-      2,
-      "always",
-      {
-        "markers": [
-          "global",
-          "globals",
-          "eslint",
-          "eslint-disable",
-          "*package",
-          "!",
-          ","
-        ]
-      }
-    ],
+    // "spaced-comment": [
+    //   2,
+    //   "always",
+    //   {
+    //     "markers": [
+    //       "global",
+    //       "globals",
+    //       "eslint",
+    //       "eslint-disable",
+    //       "*package",
+    //       "!",
+    //       ","
+    //     ]
+    //   }
+    // ],
     // 要求或禁止模板字符串中的嵌入表达式周围空格的使用
     "template-curly-spacing": [2, "never"],
     // isNaN()检查时需要调用NaN
