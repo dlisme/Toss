@@ -75,7 +75,7 @@
       }
     ],
     // 要求或禁止使用拖尾逗号
-    "comma-dangle": [2, "never"],
+    // "comma-dangle": [2, "never"],
     // 控制逗号前后的空格
     "comma-spacing": [
       2,
