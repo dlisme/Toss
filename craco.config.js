@@ -11,7 +11,7 @@ module.exports = {
         // antd.customize.json file in your project's root directory.
         customizeTheme: {
           "@font-size-base": "12px",
-          "@breadcrumb-font-size": "14px",
+          "@breadcrumb-font-size": "12px",
           "@heading-color": "#262626",
           "@text-color": "#595959",
           "@text-color-secondary": "#8C8C8C",
