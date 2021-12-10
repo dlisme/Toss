@@ -33,9 +33,9 @@
   },
   "scripts": {
     "prepare": "husky install",
-    "start": "PORT=3002 react-scripts start",
-    "build": "craco react-scripts build",
-    "test": "craco react-scripts test",
+    "start": "PORT=3002 react-scripts && craco start",
+    "build": "react-scripts && craco build",
+    "test": "react-scripts && craco test",
     "eject": "react-scripts eject",
     "lint": "eslint --ext .js --ext .jsx src",
     "json-server": "json-server --watch __json_server_mock__/db.json --watch --port 3000 --middlewares ./__json_server_mock__/middleware.js"

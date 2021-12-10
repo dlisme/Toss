@@ -1,5 +1,3 @@
-/* eslint-disable no-undef */
-/* craco.config.js */
 const CracoAntDesignPlugin = require("craco-antd");
 
 const path = require("path");
@@ -30,21 +28,17 @@ module.exports = {
     },
   ],
   // eslint-disable-next-line object-curly-spacing
-  webpack: { alias: { "@": path.resolve(__dirname, "src") } },
+  webpack: {
+    alias: {
+      "@": path.resolve(__dirname, "src"),
+    },
+    configure: webpackConfig => {
+      if (process.env.NODE_ENV !== "development") {
+        webpackConfig.output.publicPath = "/";
+      }
+
+      return webpackConfig;
+    },
+  },
   devServer: { sockPort: 80 },
 };
-
-// const CracoAntDesignPlugin = require("craco-antd");
-
-// module.exports = {
-//   plugins: [
-//     {
-//       plugin: CracoAntDesignPlugin,
-//       options: {
-//         customizeTheme: {
-//           "@primary-color": "#1DA57A",
-//         },
-//       },
-//     },
-//   ],
-// };
