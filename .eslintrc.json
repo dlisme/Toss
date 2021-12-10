@@ -1,42 +1,34 @@
-module.exports = {
-  parserOptions: {
-    ecmaVersion: 7,
-    // 开启实验属性
-    ecmaFeatures: {
-      experimentalObjectRestSpread: true,
-      // 修饰器
-      experimentalDecorators: true,
-      jsx: true,
-    },
-    sourceType: "module",
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true
   },
-  env: {
-    browser: true,
-    commonjs: true,
-    es6: true,
-  },
-  extends: [
-    // "react-app",
+  "extends": [
+    "react-app",
+    "react-app/jest",
     "eslint:recommended",
     "plugin:react/recommended",
     "prettier",
     // "plugin:prettier/recommended",
     "plugin:import/typescript",
-    "plugin:react-hooks/recommended",
+    "plugin:react-hooks/recommended"
   ],
-  parser: "babel-eslint",
-  plugins: ["react"],
-  settings: {
-    react: {
-      version: "detect",
-    },
+  "parserOptions": {
+    "project": "tsconfig.json",
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
   },
+  // "parser": "babel-eslint",
+  "plugins": ["react"],
   /**
    * "off" 或 0 - 关闭规则
    * "warn" 或 1 - 开启规则，使用警告级别的错误：warn (不会导致程序退出),
    * "error" 或 2 - 开启规则，使用错误级别的错误：error (当被触发的时候，程序会退出)
    */
-  rules: {
+  "rules": {
     "no-console": "off",
     // 禁止未使用的变量
     // "no-unused-vars": [
@@ -52,9 +44,9 @@ module.exports = {
     "arrow-spacing": [
       2,
       {
-        before: true,
-        after: true,
-      },
+        "before": true,
+        "after": true
+      }
     ],
     // 禁止或强制在单行代码块中使用空格(禁用)
     "block-spacing": [2, "always"],
@@ -64,15 +56,15 @@ module.exports = {
       2,
       "1tbs",
       {
-        allowSingleLine: true,
-      },
+        "allowSingleLine": true
+      }
     ],
     // 驼峰式大小写
-    CamelCase: [
+    "CamelCase": [
       0,
       {
-        properties: "always",
-      },
+        "properties": "always"
+      }
     ],
     // 要求或禁止使用拖尾逗号
     // "comma-dangle": [2, "never"],
@@ -80,66 +72,66 @@ module.exports = {
     "comma-spacing": [
       2,
       {
-        before: false,
-        after: true,
-      },
+        "before": false,
+        "after": true
+      }
     ],
     // 控制逗号在行尾出现还是在行首出现 (默认行尾)
     // http://eslint.org/docs/rules/comma-style
     "comma-style": [2, "last"],
     //强制所有控制语句使用一致的括号风格, 需要遵循花括号约定
-    curly: [2, "all"],
+    "curly": [2, "all"],
     // 验证super()构造函数中的调用,派生类的构造函数必须调用super(). 非派生类的构造函数不得调用super()
     "constructor-super": 2,
     // 文件末尾强制换行
     "eol-last": 2,
     // 消除类型不安全的相等运算符=== 和 !==
-    eqeqeq: ["error", "always", { null: "ignore" }],
+    "eqeqeq": ["error", "always", { "null": "ignore" }],
     // 强制围绕*生成器函数的间距,
     // 强制 generator 函数中 * 号周围使用一致的空格
     "generator-star-spacing": [
       2,
       {
-        before: true,
-        after: true,
-      },
+        "before": true,
+        "after": true
+      }
     ],
     // 强制回调错误处理
     "handle-callback-err": [2, "^(err|error)$"],
     // "indent": ["error", 2],
     // 强制一致缩进
-    indent: [
-      2,
-      2,
-      {
-        SwitchCase: 1,
-      },
-    ],
+    // "indent": [
+    //   2,
+    //   2,
+    //   {
+    //     "SwitchCase": 1
+    //   }
+    // ],
     // 强制在 JSX 属性中一致地使用双引号或单引号
     "jsx-quotes": [2, "prefer-double"],
     // 强制在对象字面量的属性中键和值之间使用一致的间距
     "key-spacing": [
       2,
       {
-        beforeColon: false,
-        afterColon: true,
-      },
+        "beforeColon": false,
+        "afterColon": true
+      }
     ],
     // 强制在关键字前后使用一致的空格 (前后腰需要)
     "keyword-spacing": [
       2,
       {
-        before: true,
-        after: true,
-      },
+        "before": true,
+        "after": true
+      }
     ],
     // 要求构造函数首字母大写 （要求调用 new 操作符时有首字母大小的函数，允许调用首字母大写的函数时没有 new 操作符。）
     "new-cap": [
       2,
       {
-        newIsCap: true,
-        capIsNew: false,
-      },
+        "newIsCap": true,
+        "capIsNew": false
+      }
     ],
     // 要求调用无参构造函数时有圆括号
     "new-parens": 2,
@@ -201,9 +193,9 @@ module.exports = {
     "no-labels": [
       2,
       {
-        allowLoop: false,
-        allowSwitch: false,
-      },
+        "allowLoop": false,
+        "allowSwitch": false
+      }
     ],
     // 禁止不必要的嵌套块
     "no-lone-blocks": 2,
@@ -217,8 +209,8 @@ module.exports = {
     "no-multiple-empty-lines": [
       2,
       {
-        max: 2,
-      },
+        "max": 2
+      }
     ],
     // 禁止原始包装器
     "no-new-wrappers": 2,
@@ -258,8 +250,8 @@ module.exports = {
     "no-unneeded-ternary": [
       2,
       {
-        defaultAssignment: false, // 允许将条件表达式作为默认赋值模式
-      },
+        "defaultAssignment": false // 允许将条件表达式作为默认赋值模式
+      }
     ],
     // 禁止finally块中的控制流语句
     "no-unsafe-finally": 2,
@@ -280,28 +272,28 @@ module.exports = {
       2,
       "after",
       {
-        overrides: {
+        "overrides": {
           "?": "before",
-          ":": "before",
-        },
-      },
+          ":": "before"
+        }
+      }
     ],
     // 要求或禁止块内填充
     "padded-blocks": [2, "never"],
     // 要求或禁止使用分号而不是 ASI（这个才是控制行尾部分号的，）
-    semi: [0, "always"],
+    "semi": [0, "always"],
     // 强制分号之前和之后使用一致的空格
     "semi-spacing": [
       2,
       {
-        before: false,
-        after: true,
-      },
+        "before": false,
+        "after": true
+      }
     ],
     // 强制在块之前使用一致的空格
     "space-before-blocks": [2, "always"],
-    // 强制在 function的左括号之前使用一致的空格
-    "space-before-function-paren": [2, "never"],
+    // 强制在 function的左括号之前使用一致的空格(await async 括号前使用报错)
+    // "space-before-function-paren": [2, "never"],
     // 强制在圆括号内使用一致的空格
     "space-in-parens": [2, "never"],
     // 要求操作符周围有空格
@@ -310,9 +302,9 @@ module.exports = {
     "space-unary-ops": [
       2,
       {
-        words: true,
-        nonwords: false,
-      },
+        "words": true,
+        "nonwords": false
+      }
     ],
     // 强制在注释中 // 或 /* 使用一致的空格
     // "spaced-comment": [
@@ -339,7 +331,7 @@ module.exports = {
     // 强制在 yield* 表达式中 * 周围使用空格
     "yield-star-spacing": [2, "both"],
     // 将变量与文字值进行比较的一致条件样式
-    yoda: [2, "never"],
+    "yoda": [2, "never"],
     // 要求使用 const 声明那些声明后不再被修改的变量
     "prefer-const": 0,
     // 禁止使用debugger
@@ -349,10 +341,20 @@ module.exports = {
       2,
       "always",
       {
-        objectsInObjects: false,
-      },
+        "objectsInObjects": false
+      }
     ],
     // 指定数组的元素之间要以空格隔开(, 后面)， never参数：[ 之前和 ] 之后不能带空格，always参数：[ 之前和 ] 之后必须带空格
-    "array-bracket-spacing": [2, "never"],
+    "array-bracket-spacing": [2, "never"]
   },
-};
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "overrides": [
+    {
+      "files": ["src/**/*.ts?(x)"]
+    }
+  ]
+}
