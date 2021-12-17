@@ -19,6 +19,10 @@ module.exports = {
           "@primary-color": "#40a9ff",
           "form-item-margin-bottom": "32px",
           "descriptions-item-padding-bottom": "32px",
+          // "@menu-dark-inline-submenu-bg": "#6667ab",
+          // "@menu-bg": "#6667ab",
+          // "@menu-dark-item-active-bg": "#fff",
+          "menu-dark-bg": "#6667c6",
         },
         lessLoaderOptions: {
           // Any other less-loader options
