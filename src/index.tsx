@@ -1,13 +1,24 @@
+/*
+ * @Author: dingling
+ * @Date: 2021-12-10 11:21:31
+ * @Last Modified by: dingling
+ * @Last Modified time: 2021-12-23 18:02:37
+ */
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.scss";
 import App from "./App";
+import { BrowserRouter as Router } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
+import { ConfigProvider } from "antd";
+import zhCN from "antd/lib/locale/zh_CN";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <ConfigProvider locale={zhCN}>
+    <Router>
+      <App />
+    </Router>
+  </ConfigProvider>,
   document.getElementById("root")
 );
 

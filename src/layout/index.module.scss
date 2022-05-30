@@ -1,0 +1,65 @@
+.wrapper {
+  display: flex;
+  // height: 100vh;
+  .sider {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .logo {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 10px 0px 0px;
+      img {
+        height: 32px;
+      }
+    }
+    .scrollbarWrapper {
+      height: 100vh;
+      overflow: scroll;
+      padding-top: 80px;
+    }
+  }
+  .fixedHeader {
+    .navbar {
+      // height: 64px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(213, 213, 213, 0.5);
+      background-color: #fff;
+      padding-left: 15px;
+      .rightMenu {
+        color: #ccc;
+        margin-right: 15px;
+        display: flex;
+        align-items: center;
+        span {
+          margin-left: 8px;
+        }
+      }
+      .userSet {
+        color: #ccc;
+        cursor: pointer;
+      }
+    }
+
+    .tagsView {
+      width: 100%;
+      height: 40px;
+      background-color: #fff;
+      padding: 10px 15px;
+      color: rgba(140, 140, 140, 1);
+    }
+  }
+  .appMain {
+    padding: 15px;
+    height: calc(100vh - 95px);
+    overflow: hidden;
+    .mainContent {
+    }
+  }
+}

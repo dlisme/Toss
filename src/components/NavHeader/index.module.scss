@@ -1,0 +1,21 @@
+.add {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 15px 10px 23px;
+  .tip {
+    display: flex;
+    align-items: center;
+    position: relative;
+    font-weight: 700;
+    font-size: 12px;
+    &::before {
+      content: "";
+      width: 2px;
+      height: 16px;
+      background: #40a9ff;
+      position: absolute;
+      left: -8px;
+    }
+  }
+}

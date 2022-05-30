@@ -1,68 +1,86 @@
+/*
+ * @Author: dingling
+ * @Date: 2021-12-10 11:21:14
+ * @Last Modified by: dingling
+ * @Last Modified time: 2021-12-19 00:04:14
+ */
 import React from "react";
-import axios from "axios";
-import { Form, Input, Button, Checkbox } from "antd";
-import commonStyles from "../../common.module.scss";
+import Axios from "axios";
+import { Form, Input, Button, message } from "antd";
+import styles from "./index.module.scss";
+import { apiUrl } from "@/config/request";
+import { useHistory } from "react-router-dom";
 
-function App() {
-  const onFinish = (values: any) => {
-    console.log("Success:", values);
-    axios
-      .post("http://localhost:8000/user/login", {
-        username: values.username,
-        // eslint-disable-next-line comma-dangle
-        password: values.password,
+/**
+ * @author dingling
+ * @interface AuthProps
+ */
+interface AuthProps {
+  username: string;
+  password: string;
+}
+
+function Auth() {
+  let history = useHistory();
+  const handleSubmit = ({ username, password }: AuthProps) => {
+    Axios.post(`${apiUrl}/user/login`, {
+      username,
+      password,
+    })
+      .then(res => {
+        if (res.data.code === 200) {
+          localStorage.setItem("token", res.data.token);
+          history.push("/");
+        } else {
+          message.error(res.data.msg);
+        }
       })
-      .then(response => {
-        console.log(response);
-      })
-      .catch(error => {
-        console.log(error);
+      .catch(err => {
+        console.log(err);
       });
   };
 
-  const onFinishFailed = (errorInfo: any) => {
-    console.log("Failed:", errorInfo);
-  };
-
   return (
-    <div className="App">
-      <Form
-        name="basic"
-        labelCol={{ span: 8 }}
-        wrapperCol={{ span: 16 }}
-        initialValues={{ remember: true }}
-        onFinish={onFinish}
-        onFinishFailed={onFinishFailed}
-        autoComplete="off">
-        <Form.Item
-          label="Username"
-          name="username"
-          rules={[{ required: true, message: "Please input your username!" }]}>
-          <Input />
-        </Form.Item>
+    <div className={styles.loginContainer}>
+      <div className={styles.loginBox}>
+        <div className={styles.leftBg}></div>
+        <div className={styles.rightBg}>
+          <span className={styles.loginInText}>登录</span>
+          <Form
+            name="basic"
+            initialValues={{ remember: true }}
+            onFinish={handleSubmit}
+            autoComplete="off">
+            <Form.Item
+              name="username"
+              rules={[{ required: true, message: "请输入账号!" }]}>
+              <Input style={{ width: 346, height: 40 }} />
+            </Form.Item>
 
-        <Form.Item
-          label="Password"
-          name="password"
-          rules={[{ required: true, message: "Please input your password!" }]}>
-          <Input.Password />
-        </Form.Item>
+            <Form.Item
+              name="password"
+              rules={[{ required: true, message: "请输入密码" }]}>
+              <Input.Password style={{ width: 346, height: 40 }} />
+            </Form.Item>
 
-        <Form.Item
-          name="remember"
-          valuePropName="checked"
-          wrapperCol={{ offset: 8, span: 16 }}>
-          <Checkbox>Remember me</Checkbox>
-        </Form.Item>
-
-        <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-          <Button type="primary" htmlType="submit" className={commonStyles.abc}>
-            Submit
-          </Button>
-        </Form.Item>
-      </Form>
+            <Form.Item>
+              <Button
+                type="primary"
+                htmlType="submit"
+                style={{
+                  background: "#6667c6",
+                  border: "none",
+                  width: 346,
+                  height: 40,
+                }}>
+                提交
+              </Button>
+            </Form.Item>
+          </Form>
+        </div>
+      </div>
     </div>
   );
 }
 
-export default App;
+export default Auth;

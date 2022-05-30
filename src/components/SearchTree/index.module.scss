@@ -1,0 +1,34 @@
+.rightTree {
+  :global {
+    .ant-card-head {
+      border: none;
+      padding: 0 15px;
+      background-color: #fafafa;
+      .ant-card-head-title {
+        font-size: 12px;
+      }
+    }
+    .ant-card-body {
+      padding: 15px;
+    }
+    .ant-btn-icon-only {
+      height: 31px;
+    }
+    .ant-tree-list {
+      height: calc(100vh - 231px);
+    }
+    .ant-tree .ant-tree-node-content-wrapper.ant-tree-node-selected {
+      background-color: transparent;
+      color: #fff;
+      width: 100%;
+      border-radius: 0;
+    }
+    .ant-tree-treenode-selected {
+      background-color: #6667c6;
+      color: #fff;
+    }
+    .ant-tree .ant-tree-node-content-wrapper:hover {
+      background-color: transparent;
+    }
+  }
+}

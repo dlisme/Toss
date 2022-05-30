@@ -3,3 +3,22 @@
 .abc {
   color: $error;
 }
+
+.cardTab {
+  height: 100%;
+  background-color: #fff;
+  overflow: hidden;
+  :global {
+    .ant-tabs-nav {
+      margin: 0;
+      background-color: #f0f2f5;
+      .ant-tabs-tab-active {
+        background-color: #fff !important;
+      }
+      .ant-tabs-tab {
+        background-color: #f0f2f5;
+        border: 0;
+      }
+    }
+  }
+}
