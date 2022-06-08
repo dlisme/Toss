@@ -65,26 +65,34 @@ function Department() {
           marginLeft: 15,
           overflow: "hidden",
         }}>
-        <Tabs type="card" className={styles.cardTab}>
-          {selected?.children && (
-            <TabPane key="0" tab="子部门">
-              <SubDepartment
-                list={selected.children?.map((item: any) => ({
-                  ...item,
-                  children: undefined,
-                }))}
-              />
+        {selected?.key === 5 ? (
+          <Tabs type="card" className={styles.cardTab}>
+            <TabPane key="1" tab="成员">
+              <Staff selected={key} />
             </TabPane>
-          )}
+          </Tabs>
+        ) : (
+          <Tabs type="card" className={styles.cardTab}>
+            {selected?.children && (
+              <TabPane key="0" tab="子部门">
+                <SubDepartment
+                  list={selected.children?.map((item: any) => ({
+                    ...item,
+                    children: undefined,
+                  }))}
+                />
+              </TabPane>
+            )}
 
-          <TabPane key="1" tab="成员">
-            <Staff selected={key} />
-          </TabPane>
+            <TabPane key="1" tab="成员">
+              <Staff selected={key} />
+            </TabPane>
 
-          <TabPane key="2" tab="权限">
-            <Permission />
-          </TabPane>
-        </Tabs>
+            <TabPane key="2" tab="角色组">
+              <Permission />
+            </TabPane>
+          </Tabs>
+        )}
       </div>
     </div>
   );

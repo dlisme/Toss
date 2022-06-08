@@ -20,7 +20,7 @@ function Staff({ selected }: { selected: any }) {
   return (
     <>
       <Search />
-      <NavHeader title={"前端组"} handleCreate={handleCreate} />
+      <NavHeader title={selected?.title} handleCreate={handleCreate} />
       <Table
         selected={selected}
         handleEdit={() => {
