@@ -8,11 +8,14 @@ import React, { useEffect, useState } from "react";
 import SearchTree from "@/components/SearchTree";
 import Axios from "axios";
 import { apiUrl } from "@/config/request";
-import Table from "./Table";
+import RoleGroupPermission from "./RoleGroupPermission";
+import SubRole from "./SubRole";
 import RoleTable from "./RoleTable";
-import NavHeader from "@/components/NavHeader";
-import { Drawer } from "antd";
+import { Drawer, Tabs } from "antd";
 import FormItem from "./FormItem";
+import styles from "@/common.module.scss";
+
+const { TabPane } = Tabs;
 
 function Role() {
   const [list, setList] = useState<any[]>([]);
@@ -84,17 +87,20 @@ function Role() {
           overflow: "hidden",
           background: "#fff",
         }}>
-        <NavHeader title={"角色"} handleCreate={handleCreate} />
-
         {selected?.key === 4 ? (
           <RoleTable list={roleList} />
         ) : (
-          <Table
-            list={selected?.children?.map((item: any) => ({
-              ...item,
-              children: undefined,
-            }))}
-          />
+          <>
+            <Tabs type="card" className={styles.cardTab}>
+              <TabPane key="0" tab="子部门">
+                <SubRole selected={selected} handleCreate={handleCreate} />
+              </TabPane>
+
+              <TabPane key="1" tab="权限">
+                <RoleGroupPermission />
+              </TabPane>
+            </Tabs>
+          </>
         )}
       </div>
 

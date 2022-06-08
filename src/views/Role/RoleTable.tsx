@@ -70,7 +70,7 @@ function RoleTable({ list }: { list: any }) {
       dataIndex: "action",
       key: "action",
       fixed: "right",
-      title: "操作",
+      title: "操作1",
       width: 100,
       render: (value, { id }) => {
         return (

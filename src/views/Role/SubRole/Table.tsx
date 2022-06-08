@@ -13,6 +13,7 @@ import { NativeButtonProps } from "antd/lib/button/button";
 interface StaffListProps {
   id: number;
   title: string;
+  creator: string;
   createAt: string;
   phone: string;
   updateAt: string;
@@ -44,9 +45,9 @@ function RoleTable({ list }: { list: any }) {
       fixed: "left",
     },
     {
-      title: "电话",
-      dataIndex: "phone",
-      key: "phone",
+      title: "创建人",
+      dataIndex: "creator",
+      key: "creator",
       width: 80,
       align: "center",
     },
@@ -70,7 +71,7 @@ function RoleTable({ list }: { list: any }) {
       dataIndex: "action",
       key: "action",
       fixed: "right",
-      title: "操作",
+      title: "操作2",
       width: 100,
       render: (value, { id }) => {
         return (
